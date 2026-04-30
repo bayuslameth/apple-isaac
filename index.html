@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perancangan Simulasi Interaktif Jatuhnya Apel dari Pohon Berdasarkan Hukum Gravitasi Newton Berbasis WebGL dengan Procedural Modeling</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="ui-container">
+      <div id="title-bar">
+        <h1>Simulasi Hukum Gravitasi Newton</h1>
+      </div>
+      <div id="controls-panel">
+      <div id="controls-panel" style="display: none;"></div>
+      <div id="info-panel">
+        <h3>Panel Fisika Apel</h3>
+        <p>Waktu (t): <span id="info-time">0.00</span> s</p>
+        <p>Ketinggian (y): <span id="info-pos">0.00</span> m</p>
+        <p>Kecepatan (v): <span id="info-vel">0.00</span> m/s</p>
+        <p>Percepatan (a): <span id="info-acc">9.80</span> m/s²</p>
+        <hr style="margin: 10px 0; border-color: #444;" />
+        <div class="control-group">
+          <label for="gravity-input">Ubah Percepatan (a): <span id="gravity-val">9.8</span> m/s²</label>
+          <input type="range" id="gravity-input" min="0.5" max="30" value="9.8" step="0.1" style="width:100%; margin-top:5px; cursor: pointer;" />
+        </div>
+      </div>
+      <div id="instructions">
+        <b>WASD</b>: Gerak | <b>SHIFT</b>: Sprint | <b>Klik Layar</b>: Mouse Look<br>
+        <b>SPACE</b>: Start/Pause | <b>R</b>: Reset | <b>G</b>: Toggle Gravitasi
+      </div>
+    </div>
+
+    <!-- Crosshair -->
+    <div id="crosshair"></div>
+    
+    <div id="canvas-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
